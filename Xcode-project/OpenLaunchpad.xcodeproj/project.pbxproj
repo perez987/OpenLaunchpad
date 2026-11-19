@@ -63,17 +63,15 @@
 		A20000000000000000000015 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		A20000000000000000000016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A20000000000000000000017 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		A20000000000000000000018 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		A20000000000000000000019 /* shim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shim.h; sourceTree = "<group>"; };
 		A2000000000000000000001A /* Make-icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Make-icon.swift"; sourceTree = "<group>"; };
 		A20000000000000000000020 /* OpenLaunchpad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenLaunchpad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20000000000000000000021 /* LauncherCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LauncherCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A20000000000000000000023 /* OpenLaunchpad.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text; path = OpenLaunchpad.xcscheme; sourceTree = "<group>"; };
-		A20000000000000000000024 /* CoreChecks.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoreChecks.xcscheme; sourceTree = "<group>"; };
 		A20000000000000000000025 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A20000000000000000000026 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Resources/es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A20000000000000000000027 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A20000000000000000000028 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Resources/es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D98DAF4B30AFBD53009E598A /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,42 +95,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F10000000000000000000001 = {
+		D98DAF4A30AFBD1D009E598A /* CSQLite */ = {
 			isa = PBXGroup;
 			children = (
-				F1000000000000000000000A /* Frameworks */,
-				A20000000000000000000016 /* Info.plist */,
-				A30000000000000000000001 /* Localizable.strings */,
-				A30000000000000000000002 /* InfoPlist.strings */,
-				F10000000000000000000009 /* OpenLaunchpad.xcodeproj/xcshareddata/xcschemes */,
-				F10000000000000000000002 /* Products */,
-				F10000000000000000000008 /* Scripts */,
-				F10000000000000000000006 /* Sources/CSQLite */,
-				F10000000000000000000003 /* Sources/LauncherCore */,
-				F10000000000000000000004 /* Sources/OpenLaunchpad */,
-				F10000000000000000000005 /* Sources/TrackpadBridge */,
+				D98DAF4B30AFBD53009E598A /* module.modulemap */,
+				A20000000000000000000019 /* shim.h */,
 			);
+			path = CSQLite;
 			sourceTree = "<group>";
 		};
-		F10000000000000000000002 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A20000000000000000000020 /* OpenLaunchpad.app */,
-				A20000000000000000000021 /* LauncherCore.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F10000000000000000000003 /* Sources/LauncherCore */ = {
+		D98DAF4C30AFBD66009E598A /* LauncherCore */ = {
 			isa = PBXGroup;
 			children = (
 				A20000000000000000000001 /* Models.swift */,
 				A20000000000000000000002 /* PinchTracker.swift */,
 			);
-			path = Sources/LauncherCore;
+			path = LauncherCore;
 			sourceTree = "<group>";
 		};
-		F10000000000000000000004 /* Sources/OpenLaunchpad */ = {
+		D98DAF4D30AFBD87009E598A /* OpenLaunchpad */ = {
 			isa = PBXGroup;
 			children = (
 				A20000000000000000000003 /* AppScanner.swift */,
@@ -150,26 +131,42 @@
 				A20000000000000000000010 /* TrackpadGestures.swift */,
 				A20000000000000000000011 /* ViewState.swift */,
 			);
-			path = Sources/OpenLaunchpad;
+			path = OpenLaunchpad;
 			sourceTree = "<group>";
 		};
-		F10000000000000000000005 /* Sources/TrackpadBridge */ = {
+		D98DAF4E30AFBDC0009E598A /* TrackpadBridge */ = {
 			isa = PBXGroup;
 			children = (
-				A20000000000000000000012 /* TrackpadBridge.c */,
-				A20000000000000000000014 /* TrackpadBridge.h */,
 				A20000000000000000000015 /* module.modulemap */,
+				A20000000000000000000014 /* TrackpadBridge.h */,
+				A20000000000000000000012 /* TrackpadBridge.c */,
 			);
-			path = Sources/TrackpadBridge;
+			path = TrackpadBridge;
 			sourceTree = "<group>";
 		};
-		F10000000000000000000006 /* Sources/CSQLite */ = {
+		F10000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
-				A20000000000000000000018 /* module.modulemap */,
-				A20000000000000000000019 /* shim.h */,
+				D98DAF4A30AFBD1D009E598A /* CSQLite */,
+				F1000000000000000000000A /* Frameworks */,
+				A20000000000000000000016 /* Info.plist */,
+				A30000000000000000000002 /* InfoPlist.strings */,
+				D98DAF4C30AFBD66009E598A /* LauncherCore */,
+				A30000000000000000000001 /* Localizable.strings */,
+				D98DAF4D30AFBD87009E598A /* OpenLaunchpad */,
+				F10000000000000000000002 /* Products */,
+				F10000000000000000000008 /* Scripts */,
+				D98DAF4E30AFBDC0009E598A /* TrackpadBridge */,
 			);
-			path = Sources/CSQLite;
+			sourceTree = "<group>";
+		};
+		F10000000000000000000002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000020 /* OpenLaunchpad.app */,
+				A20000000000000000000021 /* LauncherCore.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		F10000000000000000000008 /* Scripts */ = {
@@ -178,15 +175,6 @@
 				A2000000000000000000001A /* Make-icon.swift */,
 			);
 			path = Scripts;
-			sourceTree = "<group>";
-		};
-		F10000000000000000000009 /* OpenLaunchpad.xcodeproj/xcshareddata/xcschemes */ = {
-			isa = PBXGroup;
-			children = (
-				A20000000000000000000023 /* OpenLaunchpad.xcscheme */,
-				A20000000000000000000024 /* CoreChecks.xcscheme */,
-			);
-			path = OpenLaunchpad.xcodeproj/xcshareddata/xcschemes;
 			sourceTree = "<group>";
 		};
 		F1000000000000000000000A /* Frameworks */ = {
@@ -481,7 +469,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.openlaunchpad.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Sources/CSQLite $(SRCROOT)/Sources/TrackpadBridge";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CSQLite $(SRCROOT)/TrackpadBridge";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -511,7 +499,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.openlaunchpad.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Sources/CSQLite $(SRCROOT)/Sources/TrackpadBridge";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CSQLite $(SRCROOT)/TrackpadBridge";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};

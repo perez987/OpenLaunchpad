@@ -149,8 +149,8 @@
 "Manage profiles…" = "Gestionar perfiles…";
 "Layout backups" = "Copias de seguridad del diseño";
 "Save folders, ordering, hidden apps, aliases, and preferences as an ordinary JSON file." = "Guarda carpetas, orden, apps ocultas, alias y preferencias en un archivo JSON.";
-"Export backup…" = "Exportar copia de seguridad…";
-"Restore backup…" = "Restaurar copia de seguridad…";
+"Export backup…" = "Exportar copia…";
+"Restore backup…" = "Restaurar copia…";
 "Restore matches apps installed on this Mac. Missing apps are skipped; new apps are appended. Imported paths are never used to launch applications." = "La restauración busca las apps instaladas en este Mac. Se omiten las que faltan y se añaden las nuevas. Las rutas importadas nunca se usan para abrir aplicaciones.";
 "Coming from Launchpad" = "Migrar desde Launchpad";
 "Import ordering and folders from a legacy Launchpad SQLite database backup." = "Importa el orden y las carpetas de una copia de seguridad de una base de datos SQLite antigua de Launchpad.";
