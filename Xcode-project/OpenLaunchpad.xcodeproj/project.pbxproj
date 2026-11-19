@@ -1,0 +1,621 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* Models.swift */; };
+		A10000000000000000000002 /* PinchTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000002 /* PinchTracker.swift */; };
+		A10000000000000000000003 /* AppScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000003 /* AppScanner.swift */; };
+		A10000000000000000000004 /* DockIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000004 /* DockIntegration.swift */; };
+		A10000000000000000000005 /* GlassBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000005 /* GlassBackground.swift */; };
+		A10000000000000000000006 /* IntegrationChecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000006 /* IntegrationChecks.swift */; };
+		A10000000000000000000007 /* LauncherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000007 /* LauncherIcon.swift */; };
+		A10000000000000000000008 /* LauncherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000008 /* LauncherView.swift */; };
+		A10000000000000000000009 /* LibraryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000009 /* LibraryStore.swift */; };
+		A1000000000000000000000A /* NativeIconInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000A /* NativeIconInteraction.swift */; };
+		A1000000000000000000000B /* OpenLaunchpadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000B /* OpenLaunchpadApp.swift */; };
+		A1000000000000000000000D /* ReorganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000D /* ReorganizationView.swift */; };
+		A1000000000000000000000E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000E /* SettingsView.swift */; };
+		A1000000000000000000000F /* SystemServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000F /* SystemServices.swift */; };
+		A10000000000000000000010 /* TrackpadGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000010 /* TrackpadGestures.swift */; };
+		A10000000000000000000011 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000011 /* ViewState.swift */; };
+		A10000000000000000000012 /* TrackpadBridge.c in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000012 /* TrackpadBridge.c */; };
+		A10000000000000000000014 /* LauncherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A20000000000000000000021 /* LauncherCore.framework */; };
+		A10000000000000000000016 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A20000000000000000000017 /* CoreFoundation.framework */; };
+		A10000000000000000000017 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = J10000000000000000000002 /* Sparkle */; };
+		A10000000000000000000018 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A30000000000000000000001 /* Localizable.strings */; };
+		A10000000000000000000019 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A30000000000000000000002 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B10000000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C10000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D10000000000000000000002;
+			remoteInfo = LauncherCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A20000000000000000000001 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		A20000000000000000000002 /* PinchTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchTracker.swift; sourceTree = "<group>"; };
+		A20000000000000000000003 /* AppScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScanner.swift; sourceTree = "<group>"; };
+		A20000000000000000000004 /* DockIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockIntegration.swift; sourceTree = "<group>"; };
+		A20000000000000000000005 /* GlassBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassBackground.swift; sourceTree = "<group>"; };
+		A20000000000000000000006 /* IntegrationChecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationChecks.swift; sourceTree = "<group>"; };
+		A20000000000000000000007 /* LauncherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherIcon.swift; sourceTree = "<group>"; };
+		A20000000000000000000008 /* LauncherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherView.swift; sourceTree = "<group>"; };
+		A20000000000000000000009 /* LibraryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryStore.swift; sourceTree = "<group>"; };
+		A2000000000000000000000A /* NativeIconInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeIconInteraction.swift; sourceTree = "<group>"; };
+		A2000000000000000000000B /* OpenLaunchpadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLaunchpadApp.swift; sourceTree = "<group>"; };
+		A2000000000000000000000D /* ReorganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorganizationView.swift; sourceTree = "<group>"; };
+		A2000000000000000000000E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A2000000000000000000000F /* SystemServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemServices.swift; sourceTree = "<group>"; };
+		A20000000000000000000010 /* TrackpadGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackpadGestures.swift; sourceTree = "<group>"; };
+		A20000000000000000000011 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		A20000000000000000000012 /* TrackpadBridge.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TrackpadBridge.c; sourceTree = "<group>"; };
+		A20000000000000000000014 /* TrackpadBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrackpadBridge.h; sourceTree = "<group>"; };
+		A20000000000000000000015 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		A20000000000000000000016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20000000000000000000017 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		A20000000000000000000018 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		A20000000000000000000019 /* shim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shim.h; sourceTree = "<group>"; };
+		A2000000000000000000001A /* Make-icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Make-icon.swift"; sourceTree = "<group>"; };
+		A20000000000000000000020 /* OpenLaunchpad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenLaunchpad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20000000000000000000021 /* LauncherCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LauncherCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20000000000000000000023 /* OpenLaunchpad.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text; path = OpenLaunchpad.xcscheme; sourceTree = "<group>"; };
+		A20000000000000000000024 /* CoreChecks.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoreChecks.xcscheme; sourceTree = "<group>"; };
+		A20000000000000000000025 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A20000000000000000000026 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Resources/es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A20000000000000000000027 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A20000000000000000000028 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Resources/es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E10000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000014 /* LauncherCore.framework in Frameworks */,
+				A10000000000000000000016 /* CoreFoundation.framework in Frameworks */,
+				A10000000000000000000017 /* Sparkle in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E10000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F10000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				F1000000000000000000000A /* Frameworks */,
+				A20000000000000000000016 /* Info.plist */,
+				A30000000000000000000001 /* Localizable.strings */,
+				A30000000000000000000002 /* InfoPlist.strings */,
+				F10000000000000000000009 /* OpenLaunchpad.xcodeproj/xcshareddata/xcschemes */,
+				F10000000000000000000002 /* Products */,
+				F10000000000000000000008 /* Scripts */,
+				F10000000000000000000006 /* Sources/CSQLite */,
+				F10000000000000000000003 /* Sources/LauncherCore */,
+				F10000000000000000000004 /* Sources/OpenLaunchpad */,
+				F10000000000000000000005 /* Sources/TrackpadBridge */,
+			);
+			sourceTree = "<group>";
+		};
+		F10000000000000000000002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000020 /* OpenLaunchpad.app */,
+				A20000000000000000000021 /* LauncherCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F10000000000000000000003 /* Sources/LauncherCore */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000001 /* Models.swift */,
+				A20000000000000000000002 /* PinchTracker.swift */,
+			);
+			path = Sources/LauncherCore;
+			sourceTree = "<group>";
+		};
+		F10000000000000000000004 /* Sources/OpenLaunchpad */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000003 /* AppScanner.swift */,
+				A20000000000000000000004 /* DockIntegration.swift */,
+				A20000000000000000000005 /* GlassBackground.swift */,
+				A20000000000000000000006 /* IntegrationChecks.swift */,
+				A20000000000000000000007 /* LauncherIcon.swift */,
+				A20000000000000000000008 /* LauncherView.swift */,
+				A20000000000000000000009 /* LibraryStore.swift */,
+				A2000000000000000000000A /* NativeIconInteraction.swift */,
+				A2000000000000000000000B /* OpenLaunchpadApp.swift */,
+				A2000000000000000000000D /* ReorganizationView.swift */,
+				A2000000000000000000000E /* SettingsView.swift */,
+				A2000000000000000000000F /* SystemServices.swift */,
+				A20000000000000000000010 /* TrackpadGestures.swift */,
+				A20000000000000000000011 /* ViewState.swift */,
+			);
+			path = Sources/OpenLaunchpad;
+			sourceTree = "<group>";
+		};
+		F10000000000000000000005 /* Sources/TrackpadBridge */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000012 /* TrackpadBridge.c */,
+				A20000000000000000000014 /* TrackpadBridge.h */,
+				A20000000000000000000015 /* module.modulemap */,
+			);
+			path = Sources/TrackpadBridge;
+			sourceTree = "<group>";
+		};
+		F10000000000000000000006 /* Sources/CSQLite */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000018 /* module.modulemap */,
+				A20000000000000000000019 /* shim.h */,
+			);
+			path = Sources/CSQLite;
+			sourceTree = "<group>";
+		};
+		F10000000000000000000008 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				A2000000000000000000001A /* Make-icon.swift */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		F10000000000000000000009 /* OpenLaunchpad.xcodeproj/xcshareddata/xcschemes */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000023 /* OpenLaunchpad.xcscheme */,
+				A20000000000000000000024 /* CoreChecks.xcscheme */,
+			);
+			path = OpenLaunchpad.xcodeproj/xcshareddata/xcschemes;
+			sourceTree = "<group>";
+		};
+		F1000000000000000000000A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000017 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D10000000000000000000001 /* OpenLaunchpad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = G10000000000000000000001 /* Build configuration list for PBXNativeTarget "OpenLaunchpad" */;
+			buildPhases = (
+				E20000000000000000000001 /* Sources */,
+				E10000000000000000000001 /* Frameworks */,
+				E30000000000000000000001 /* Resources */,
+				E40000000000000000000001 /* Generate app icon */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				H10000000000000000000001 /* PBXTargetDependency */,
+			);
+			name = OpenLaunchpad;
+			packageProductDependencies = (
+				J10000000000000000000002 /* Sparkle */,
+			);
+			productName = OpenLaunchpad;
+			productReference = A20000000000000000000020 /* OpenLaunchpad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D10000000000000000000002 /* LauncherCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = G10000000000000000000002 /* Build configuration list for PBXNativeTarget "LauncherCore" */;
+			buildPhases = (
+				E20000000000000000000002 /* Sources */,
+				E10000000000000000000002 /* Frameworks */,
+				E30000000000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LauncherCore;
+			productName = LauncherCore;
+			productReference = A20000000000000000000021 /* LauncherCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C10000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 2730;
+			};
+			buildConfigurationList = G10000000000000000000004 /* Build configuration list for PBXProject "OpenLaunchpad" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				es,
+				Base,
+			);
+			mainGroup = F10000000000000000000001;
+			packageReferences = (
+				J10000000000000000000001 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
+			productRefGroup = F10000000000000000000002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D10000000000000000000001 /* OpenLaunchpad */,
+				D10000000000000000000002 /* LauncherCore */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E30000000000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000018 /* Localizable.strings in Resources */,
+				A10000000000000000000019 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E30000000000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E40000000000000000000001 /* Generate app icon */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/scripts/make-icon.swift",
+			);
+			name = "Generate app icon";
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/AppIcon.icns",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -eu\nicon_dir=\"$DERIVED_FILE_DIR/OpenLaunchpadIcon\"\nmkdir -p \"$icon_dir\"\nswift \"$SRCROOT/scripts/make-icon.swift\" \"$icon_dir\"\nresources=\"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\nmkdir -p \"$resources\"\ncp \"$icon_dir/AppIcon.icns\" \"$resources/AppIcon.icns\"\nsystem_icon=\"/System/Applications/Apps.app/Contents/Resources/AppIcon.icns\"\nif [ -f \"$system_icon\" ]; then cp \"$system_icon\" \"$resources/AppIcon.icns\"; fi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E20000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000003 /* AppScanner.swift in Sources */,
+				A10000000000000000000004 /* DockIntegration.swift in Sources */,
+				A10000000000000000000005 /* GlassBackground.swift in Sources */,
+				A10000000000000000000006 /* IntegrationChecks.swift in Sources */,
+				A10000000000000000000007 /* LauncherIcon.swift in Sources */,
+				A10000000000000000000008 /* LauncherView.swift in Sources */,
+				A10000000000000000000009 /* LibraryStore.swift in Sources */,
+				A1000000000000000000000A /* NativeIconInteraction.swift in Sources */,
+				A1000000000000000000000B /* OpenLaunchpadApp.swift in Sources */,
+				A1000000000000000000000D /* ReorganizationView.swift in Sources */,
+				A1000000000000000000000E /* SettingsView.swift in Sources */,
+				A1000000000000000000000F /* SystemServices.swift in Sources */,
+				A10000000000000000000010 /* TrackpadGestures.swift in Sources */,
+				A10000000000000000000011 /* ViewState.swift in Sources */,
+				A10000000000000000000012 /* TrackpadBridge.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E20000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000001 /* Models.swift in Sources */,
+				A10000000000000000000002 /* PinchTracker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		H10000000000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D10000000000000000000002 /* LauncherCore */;
+			targetProxy = B10000000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A30000000000000000000001 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A20000000000000000000025 /* en */,
+				A20000000000000000000026 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A30000000000000000000002 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A20000000000000000000027 /* en */,
+				A20000000000000000000028 /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		I10000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_C_LANGUAGE_STANDARD = gnu17;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = ER43ZD2S4U;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		I10000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_C_LANGUAGE_STANDARD = gnu17;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = ER43ZD2S4U;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		I10000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 0018;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Sources/TrackpadBridge";
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.8;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openlaunchpad.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Sources/CSQLite $(SRCROOT)/Sources/TrackpadBridge";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		I10000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 0018;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Sources/TrackpadBridge";
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.8;
+				PRODUCT_BUNDLE_IDENTIFIER = org.openlaunchpad.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Sources/CSQLite $(SRCROOT)/Sources/TrackpadBridge";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		I10000000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++14";
+				PRODUCT_BUNDLE_IDENTIFIER = org.openlaunchpad.LauncherCore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		I10000000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++14";
+				PRODUCT_BUNDLE_IDENTIFIER = org.openlaunchpad.LauncherCore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		G10000000000000000000001 /* Build configuration list for PBXNativeTarget "OpenLaunchpad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				I10000000000000000000003 /* Debug */,
+				I10000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		G10000000000000000000002 /* Build configuration list for PBXNativeTarget "LauncherCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				I10000000000000000000005 /* Debug */,
+				I10000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		G10000000000000000000004 /* Build configuration list for PBXProject "OpenLaunchpad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				I10000000000000000000001 /* Debug */,
+				I10000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		J10000000000000000000001 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		J10000000000000000000002 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = J10000000000000000000001 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C10000000000000000000001 /* Project object */;
+}

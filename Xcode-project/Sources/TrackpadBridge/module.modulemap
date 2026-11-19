@@ -1,0 +1,4 @@
+module TrackpadBridge {
+    header "TrackpadBridge.h"
+    export *
+}

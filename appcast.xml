@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+    <channel>
+    <title>OpenLaunchpad</title>
+       <item>
+            <title>Version 0.1.8</title>
+            <description></description>
+            <sparkle:version>0018</sparkle:version>
+            <sparkle:shortVersionString>0.1.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26</sparkle:minimumSystemVersion>
+            <pubDate>Sat, 18 Nov 2026 21:24:31 +0000</pubDate>
+            <enclosure
+                url="https://github.com/perez987/OpenLaunchpad/releases/download/0.1.8/OpenLaunchpad.0.1.8.dmg"
+                length="8626608"
+                sparkle:edSignature="mz7577rpPdKT4xLvs3j5V6rH5I6yXy2zvS1g0Y1MFJh8/1FfSXjI5r5sdqwfPCQ/fUY3hixHdDudqq+EmWUDAA=="
+                type="application/octet-stream"
+            />
+        </item>     
+    </channel>
+</rss>
