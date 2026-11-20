@@ -16,6 +16,17 @@ Real screenshots of OpenLaunchpad running on macOS 27. App icons and wallpaper b
 
 **Free features:** fullscreen and movable window modes, app search, folders, drag-and-drop organization, horizontal pages or vertical scrolling, configurable activation, layout backups, profiles, and appearance controls. No subscriptions or premium unlocks.
 
+## Personal motivation
+
+I really like the original project and the OpenlaunchPad app, which works very well. I have made a few changes to the project, tailored to my personal preferences. Without any intention of interfering with the original project—which I consider an excellent piece of work—here are the changes I have made in my fork:
+
+- Project structure: the Swift package of the source repo, built with `make app` and shell scripts, is now an Xcode project (`OpenLaunchpad.xcodeproj`); sources and native bridges live under `Xcode-project/`. This makes it more convenient for me to edit project files and test changes.
+- Updates: the manual checks against a configured HTTPS JSON release manifest have been replaced by Sparkle, resolved through Xcode's Swift Package Manager, that uses the fork's `appcast.xml` and Ed25519 public key. Update checks are integrated into the app.
+- Localization: the interface and alerts are now localized, adding a simple language system with English (default) and Spanish.
+- Validation: the source repo has `make test` that runs the standalone `CoreChecks` executable and the application's integration self-test. The fork has no test functionality.
+- Interface: displaying the macOS wallpaper as the background—instead of the app's default background—doesn't work on my system → I’ve tried making some changes to fix this.
+- Documentation: unused scripts and docs are deleted, while screenshots are now under the `Images/` folder.
+
 ## Build and run
 
 ### Download the public preview
@@ -114,8 +125,6 @@ Global gesture recognition is implemented but still needs testing across built-i
 - `Xcode-project/LauncherCore`: layout invariants, backup models, search, and gesture recognition.
 - `Xcode-project/OpenLaunchpad`: native views, application lifecycle, app scanning, shortcuts, imports, persistence, and conservative uninstallation.
 - `Xcode-project/TrackpadBridge`: optional runtime-loaded private multitouch ABI bridge.
-
-See [DIFFERENCES.md](DOCS/DIFFERENCES.md) for a comparison with the source repository.
 
 ## License
 
