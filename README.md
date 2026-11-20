@@ -32,7 +32,7 @@ Requires macOS 26+, Swift 6.2+, and the macOS 26+ SDK.
 
 ### Open in Xcode
 
-Open `OpenLaunchpad.xcodeproj` in Xcode 26 or later and run the **OpenLaunchpad** scheme. 
+Open `Xcode-project/OpenLaunchpad.xcodeproj` in Xcode 26 or later and run the **OpenLaunchpad** scheme.
 
 ### Configure updates
 
@@ -104,9 +104,11 @@ Global gesture recognition is implemented but still needs testing across built-i
 
 ## Source map
 
-- `Sources/LauncherCore`: layout invariants, backup models, search, and gesture recognition.
-- `Sources/OpenLaunchpad`: native views, application lifecycle, app scanning, shortcuts, imports, persistence, and conservative uninstallation.
-- `Sources/TrackpadBridge`: optional runtime-loaded private multitouch ABI bridge.
+- `Xcode-project/LauncherCore`: layout invariants, backup models, search, and gesture recognition.
+- `Xcode-project/OpenLaunchpad`: native views, application lifecycle, app scanning, shortcuts, imports, persistence, and conservative uninstallation.
+- `Xcode-project/TrackpadBridge`: optional runtime-loaded private multitouch ABI bridge.
+
+See [DIFFERENCES.md](DIFFERENCES.md) for a comparison with upstream and [CLAUDE.md](CLAUDE.md) for agent guidance.
 
 ## License
 
