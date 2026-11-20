@@ -108,7 +108,7 @@ Global gesture recognition is implemented but still needs testing across built-i
 - `Xcode-project/OpenLaunchpad`: native views, application lifecycle, app scanning, shortcuts, imports, persistence, and conservative uninstallation.
 - `Xcode-project/TrackpadBridge`: optional runtime-loaded private multitouch ABI bridge.
 
-See [DIFFERENCES.md](DIFFERENCES.md) for a comparison with upstream and [CLAUDE.md](CLAUDE.md) for agent guidance.
+See [DIFFERENCES.md](DOCS/DIFFERENCES.md) for a comparison with the source repository.
 
 ## License
 

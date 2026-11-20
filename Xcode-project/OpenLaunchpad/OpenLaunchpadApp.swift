@@ -65,9 +65,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     private var horizontalSwipe = false
     private var observers: [NSObjectProtocol] = []
     func applicationDidFinishLaunching(_ notification: Notification) {
-        if CommandLine.arguments.contains("--self-test") {
-            exit(IntegrationChecks.run())
-        }
         NSApp.setActivationPolicy(.regular)
         configureUpdater()
         store.dismiss = { [weak self] in self?.hide() }

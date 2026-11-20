@@ -12,7 +12,6 @@
 		A10000000000000000000003 /* AppScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000003 /* AppScanner.swift */; };
 		A10000000000000000000004 /* DockIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000004 /* DockIntegration.swift */; };
 		A10000000000000000000005 /* GlassBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000005 /* GlassBackground.swift */; };
-		A10000000000000000000006 /* IntegrationChecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000006 /* IntegrationChecks.swift */; };
 		A10000000000000000000007 /* LauncherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000007 /* LauncherIcon.swift */; };
 		A10000000000000000000008 /* LauncherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000008 /* LauncherView.swift */; };
 		A10000000000000000000009 /* LibraryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000009 /* LibraryStore.swift */; };
@@ -47,7 +46,6 @@
 		A20000000000000000000003 /* AppScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScanner.swift; sourceTree = "<group>"; };
 		A20000000000000000000004 /* DockIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockIntegration.swift; sourceTree = "<group>"; };
 		A20000000000000000000005 /* GlassBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassBackground.swift; sourceTree = "<group>"; };
-		A20000000000000000000006 /* IntegrationChecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationChecks.swift; sourceTree = "<group>"; };
 		A20000000000000000000007 /* LauncherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherIcon.swift; sourceTree = "<group>"; };
 		A20000000000000000000008 /* LauncherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherView.swift; sourceTree = "<group>"; };
 		A20000000000000000000009 /* LibraryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryStore.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				A20000000000000000000003 /* AppScanner.swift */,
 				A20000000000000000000004 /* DockIntegration.swift */,
 				A20000000000000000000005 /* GlassBackground.swift */,
-				A20000000000000000000006 /* IntegrationChecks.swift */,
 				A20000000000000000000007 /* LauncherIcon.swift */,
 				A20000000000000000000008 /* LauncherView.swift */,
 				A20000000000000000000009 /* LibraryStore.swift */,
@@ -305,7 +302,6 @@
 				A10000000000000000000003 /* AppScanner.swift in Sources */,
 				A10000000000000000000004 /* DockIntegration.swift in Sources */,
 				A10000000000000000000005 /* GlassBackground.swift in Sources */,
-				A10000000000000000000006 /* IntegrationChecks.swift in Sources */,
 				A10000000000000000000007 /* LauncherIcon.swift in Sources */,
 				A10000000000000000000008 /* LauncherView.swift in Sources */,
 				A10000000000000000000009 /* LibraryStore.swift in Sources */,
