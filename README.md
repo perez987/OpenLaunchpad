@@ -21,6 +21,8 @@ Real screenshots of OpenLaunchpad running on macOS 27. App icons and wallpaper b
 I really like the original project and the OpenlaunchPad app, which works very well. I have made a few changes to the project, tailored to my personal preferences. Without any intention of interfering with the original project—which I consider an excellent piece of work—here are the changes I have made in my fork:
 
 - Project structure: the Swift package of the source repo, built with `make app` and shell scripts, is now an Xcode project (`OpenLaunchpad.xcodeproj`); sources and native bridges live under `Xcode-project/`. This makes it more convenient for me to edit project files and test changes.
+- The source repo is only for Apple Silicon, this fork is for Apple Intel too.
+- The app of this fork is notarized by Apple.
 - Updates: the manual checks against a configured HTTPS JSON release manifest have been replaced by Sparkle, resolved through Xcode's Swift Package Manager, that uses the fork's `appcast.xml` and Ed25519 public key. Update checks are integrated into the app.
 - Localization: the interface and alerts are now localized, adding a simple language system with English (default) and Spanish.
 - Validation: the source repo has `make test` that runs the standalone `CoreChecks` executable and the application's integration self-test. The fork has no test functionality.
@@ -74,7 +76,7 @@ Sparkle is included through Swift Package Manager. Publish signed update archive
 - Configurable global shortcut, optional F4 registration, menu bar and Dock activation, hot corners with delay and external-corner filtering.
 - **Experimental, opt-in global 3/4/5-finger pinch/spread gestures**, with progress-driven opacity and cancellation. A private trackpad bridge is isolated and dynamically loaded; public APIs remain the default.
 - Classic LaunchOS-style search/grid/folder interface and five-tab settings, plus an optional Workspace interface.
-- Native Liquid Glass controls, optional desktop wallpaper, blur/material controls, automatic system light/dark appearance, explicit light/dark overrides, monochrome/tinted icon treatments, and separate app/folder labels. With wallpaper disabled, fullscreen uses the app's gradient background and Classic windowed mode uses translucent glass.
+- Native Liquid Glass controls, current desktop wallpaper or a glass background, blur/material controls, automatic system light/dark appearance, explicit light/dark overrides, monochrome/tinted icon treatments, and separate app/folder labels.
 - Cached wallpaper blur and local aerial wallpaper stills keep expensive image processing outside scrolling animations. Wallpaper is refreshed when the launcher opens; animated wallpaper playback is not included.
 - Wallpaper lookup uses the launcher display and macOS's wallpaper store. For separate Spaces, it uses the most recently used stored selection; macOS does not expose the active Space through the public wallpaper API. Some system-generated or shuffled wallpapers cannot be resolved as local images and fall back to the app background.
 - Default macOS Apps logo when available, including native light/dark/tint icon variants through the system asset catalog; generated fallback on other hosts and an optional original rocket logo. Apple icon resources are read from the build machine and are not committed to this repository or covered by the project's MIT license. Dock icon appearance follows macOS icon settings, separately from app-only UI overrides.
