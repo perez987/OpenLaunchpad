@@ -172,9 +172,7 @@ struct LauncherView: View {
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )
-                if store.preferences.wallpaper
-                    || (classic && store.preferences.fullscreen)
-                {
+                if store.preferences.wallpaper {
                     WallpaperBackground(
                         blur: reduceTransparency ? 0 : store.preferences.blur
                     )
