@@ -1,6 +1,7 @@
 import AVFoundation
 import AppKit
 import CoreImage
+import os
 import SwiftUI
 
 struct GlassBackground: NSViewRepresentable {
@@ -19,6 +20,7 @@ struct WallpaperBackground: View {
     let blur: Double
     @Environment(\.colorScheme) private var colorScheme
     @ViewState private var rendered: NSImage?
+    @ViewState private var refreshID = UUID()
     var body: some View {
         GeometryReader { proxy in
             let screen = NSScreen.main ?? NSScreen.screens.first
@@ -29,7 +31,8 @@ struct WallpaperBackground: View {
                 width: Int(proxy.size.width),
                 height: Int(proxy.size.height),
                 blur: blur,
-                dark: colorScheme == .dark
+                dark: colorScheme == .dark,
+                refreshID: refreshID
             )
             Group {
                 if let rendered {
@@ -40,13 +43,13 @@ struct WallpaperBackground: View {
             }.frame(width: proxy.size.width, height: proxy.size.height)
                 .clipped()
                 .task(id: request) {
-                    guard
-                        let data = await WallpaperRenderer.shared.render(
-                            request
-                        ), !Task.isCancelled
-                    else { return }
-                    rendered = NSImage(data: data)
+                    let data = await WallpaperRenderer.shared.render(request)
+                    guard !Task.isCancelled else { return }
+                    rendered = data.flatMap { NSImage(data: $0) }
                 }
+                .onReceive(
+                    NotificationCenter.default.publisher(for: .launcherDidShow)
+                ) { _ in refreshID = UUID() }
         }
     }
 }
@@ -57,10 +60,14 @@ private struct WallpaperRequest: Hashable, Sendable {
     let height: Int
     let blur: Double
     let dark: Bool
+    let refreshID: UUID
 }
 
 private actor WallpaperRenderer {
     static let shared = WallpaperRenderer()
+    private let logger = Logger(
+        subsystem: "org.openlaunchpad.app", category: "Wallpaper"
+    )
     private let context = CIContext(options: [.cacheIntermediates: false])
     private var cache: [WallpaperRequest: Data] = [:]
     func render(_ request: WallpaperRequest) async -> Data? {
@@ -117,20 +124,18 @@ private actor WallpaperRenderer {
                     from: data,
                     format: nil
                 )) as? [String: Any],
-            let all = index["AllSpacesAndDisplays"] as? [String: Any],
-            let linked = all["Linked"] as? [String: Any],
-            let content = linked["Content"] as? [String: Any],
-            let choices = content["Choices"] as? [[String: Any]],
-            let choice = choices.first,
-            (choice["Provider"] as? String)?.contains("aerials") == true,
-            let configuration = choice["Configuration"] as? Data,
-            let config =
-                (try? PropertyListSerialization.propertyList(
-                    from: configuration,
-                    format: nil
-                )) as? [String: Any],
-            let assetID = config["assetID"] as? String
+            let choice = Self.desktopChoice(in: index),
+            choice["Provider"] as? String == "com.apple.wallpaper.choice.aerials"
         {
+            guard let configuration = choice["Configuration"] as? Data,
+                let config = (try? PropertyListSerialization.propertyList(
+                    from: configuration, format: nil
+                )) as? [String: Any],
+                let assetID = config["assetID"] as? String
+            else {
+                logger.error("The selected aerial wallpaper has no usable asset identifier.")
+                return nil
+            }
             var ids = [assetID]
             if let manifestData = try? Data(
                 contentsOf: root.appendingPathComponent(
@@ -177,7 +182,33 @@ private actor WallpaperRenderer {
                     return CIImage(cgImage: frame)
                 }
             }
+            logger.error("The selected aerial wallpaper could not be loaded from local assets.")
+            return nil
         }
-        return request.url.flatMap { CIImage(contentsOf: $0) }
+        guard let url = request.url, url.isFileURL,
+            FileManager.default.fileExists(atPath: url.path),
+            let image = CIImage(contentsOf: url)
+        else {
+            logger.error("The desktop wallpaper image is unavailable or could not be decoded.")
+            return nil
+        }
+        return image
+    }
+
+    private static func desktopChoice(in index: [String: Any]) -> [String: Any]? {
+        for key in ["AllSpacesAndDisplays", "SystemDefault"] {
+            guard let scope = index[key] as? [String: Any] else { continue }
+            if scope["Type"] as? String == "idle" { continue }
+            let side = (scope["Type"] as? String) == "linked"
+                ? scope["Linked"]
+                : scope["Desktop"] ?? scope["Linked"]
+            guard let entry = side as? [String: Any],
+                let content = entry["Content"] as? [String: Any],
+                let choices = content["Choices"] as? [[String: Any]],
+                let choice = choices.first
+            else { continue }
+            return choice
+        }
+        return nil
     }
 }
