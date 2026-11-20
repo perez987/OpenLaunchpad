@@ -28,6 +28,7 @@
 		A10000000000000000000017 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = J10000000000000000000002 /* Sparkle */; };
 		A10000000000000000000018 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A30000000000000000000001 /* Localizable.strings */; };
 		A10000000000000000000019 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A30000000000000000000002 /* InfoPlist.strings */; };
+		A1000000000000000000001A /* WallpaperStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000001B /* WallpaperStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		A20000000000000000000017 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		A20000000000000000000019 /* shim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shim.h; sourceTree = "<group>"; };
 		A2000000000000000000001A /* Make-icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Make-icon.swift"; sourceTree = "<group>"; };
+		A2000000000000000000001B /* WallpaperStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperStore.swift; sourceTree = "<group>"; };
 		A20000000000000000000020 /* OpenLaunchpad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenLaunchpad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20000000000000000000021 /* LauncherCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LauncherCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20000000000000000000025 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				A2000000000000000000000F /* SystemServices.swift */,
 				A20000000000000000000010 /* TrackpadGestures.swift */,
 				A20000000000000000000011 /* ViewState.swift */,
+				A2000000000000000000001B /* WallpaperStore.swift */,
 			);
 			path = OpenLaunchpad;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				A1000000000000000000000F /* SystemServices.swift in Sources */,
 				A10000000000000000000010 /* TrackpadGestures.swift in Sources */,
 				A10000000000000000000011 /* ViewState.swift in Sources */,
+				A1000000000000000000001A /* WallpaperStore.swift in Sources */,
 				A10000000000000000000012 /* TrackpadBridge.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

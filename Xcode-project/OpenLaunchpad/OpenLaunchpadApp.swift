@@ -41,6 +41,7 @@ private struct CheckForUpdatesButton: View {
 final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     let store = LibraryStore()
     private var window: NSWindow?
+    var wallpaperScreen: NSScreen? { window?.screen }
     private var settingsWindow: NSWindow?
     private var statusItem: NSStatusItem?
     private var updaterController: SPUStandardUpdaterController?
@@ -421,6 +422,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
                 )
             }
         }
+    }
+    func windowDidChangeScreen(_ notification: Notification) {
+        guard notification.object as? NSWindow === window else { return }
+        NotificationCenter.default.post(name: .launcherScreenDidChange, object: nil)
     }
     func applicationDidResignActive(_ notification: Notification) {
         if window?.isVisible == true && window?.attachedSheet == nil
