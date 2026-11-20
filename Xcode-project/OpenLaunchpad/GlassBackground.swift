@@ -23,10 +23,20 @@ struct WallpaperBackground: View {
     @ViewState private var refreshID = UUID()
     var body: some View {
         GeometryReader { proxy in
-            let screen = NSScreen.main ?? NSScreen.screens.first
+            let screen = (NSApp.delegate as? AppDelegate)?.wallpaperScreen
+                ?? NSScreen.main ?? NSScreen.screens.first
             let request = WallpaperRequest(
                 url: screen.flatMap {
                     NSWorkspace.shared.desktopImageURL(for: $0)
+                },
+                display: screen.flatMap { screen in
+                    guard let number = screen.deviceDescription[
+                        NSDeviceDescriptionKey("NSScreenNumber")
+                    ] as? NSNumber,
+                        let uuid = CGDisplayCreateUUIDFromDisplayID(number.uint32Value)?
+                            .takeRetainedValue()
+                    else { return nil }
+                    return CFUUIDCreateString(nil, uuid) as String
                 },
                 width: Int(proxy.size.width),
                 height: Int(proxy.size.height),
@@ -50,12 +60,20 @@ struct WallpaperBackground: View {
                 .onReceive(
                     NotificationCenter.default.publisher(for: .launcherDidShow)
                 ) { _ in refreshID = UUID() }
+                .onReceive(
+                    NotificationCenter.default.publisher(for: .launcherScreenDidChange)
+                ) { _ in refreshID = UUID() }
         }
     }
 }
 
+extension Notification.Name {
+    static let launcherScreenDidChange = Notification.Name("OpenLaunchpad.screenDidChange")
+}
+
 private struct WallpaperRequest: Hashable, Sendable {
     let url: URL?
+    let display: String?
     let width: Int
     let height: Int
     let blur: Double
@@ -104,18 +122,20 @@ private actor WallpaperRenderer {
                 using: .png,
                 properties: [:]
             )
-        else { return nil }
+        else {
+            logger.error("The desktop wallpaper could not be rendered.")
+            return nil
+        }
         if cache.count >= 4 { cache.removeAll() }
         cache[request] = data
         return data
     }
     private func wallpaper(_ request: WallpaperRequest) async -> CIImage? {
-        // NSWorkspace can return the old static fallback for an aerial desktop. Resolve
-        // the selected local aerial instead; never download or bundle OS artwork.
         let root = FileManager.default.homeDirectoryForCurrentUser
             .appendingPathComponent(
                 "Library/Application Support/com.apple.wallpaper"
             )
+        let choice: WallpaperStore.Choice?
         if let data = try? Data(
             contentsOf: root.appendingPathComponent("Store/Index.plist")
         ),
@@ -123,19 +143,20 @@ private actor WallpaperRenderer {
                 (try? PropertyListSerialization.propertyList(
                     from: data,
                     format: nil
-                )) as? [String: Any],
-            let choice = Self.desktopChoice(in: index),
-            choice["Provider"] as? String == "com.apple.wallpaper.choice.aerials"
+                )) as? [String: Any]
         {
-            guard let configuration = choice["Configuration"] as? Data,
-                let config = (try? PropertyListSerialization.propertyList(
-                    from: configuration, format: nil
-                )) as? [String: Any],
-                let assetID = config["assetID"] as? String
-            else {
-                logger.error("The selected aerial wallpaper has no usable asset identifier.")
+            choice = WallpaperStore.choice(in: index, display: request.display)
+        } else {
+            choice = nil
+        }
+        if case .image(let url) = choice {
+            guard let image = CIImage(contentsOf: url) else {
+                logger.error("The selected desktop wallpaper image could not be decoded.")
                 return nil
             }
+            return image
+        }
+        if case .aerial(let assetID) = choice {
             var ids = [assetID]
             if let manifestData = try? Data(
                 contentsOf: root.appendingPathComponent(
@@ -160,29 +181,43 @@ private actor WallpaperRenderer {
                 }.compactMap { $0["id"] as? String }
             }
             for id in ids where UUID(uuidString: id) != nil {
-                let url = root.appendingPathComponent(
-                    "aerials/videos/\(id).mov"
-                )
-                guard FileManager.default.fileExists(atPath: url.path) else {
-                    continue
+                let videos = [
+                    root.appendingPathComponent("aerials/videos/\(id).mov"),
+                    URL(fileURLWithPath:
+                        "/Library/Application Support/com.apple.idleassetsd/Customer/4KSDR240FPS/\(id).mov"),
+                    URL(fileURLWithPath:
+                        "/Library/Application Support/com.apple.idleassetsd/Customer/4KSDR120FPS/\(id).mov"),
+                ]
+                for url in videos where FileManager.default.fileExists(
+                    atPath: url.path
+                ) {
+                    let asset = AVURLAsset(url: url)
+                    let generator = AVAssetImageGenerator(asset: asset)
+                    generator.appliesPreferredTrackTransform = true
+                    generator.maximumSize = CGSize(width: 2048, height: 2048)
+                    let seconds =
+                        (try? await asset.load(.duration)).map(CMTimeGetSeconds)
+                        ?? .nan
+                    let time =
+                        seconds.isFinite && seconds > 1
+                        ? CMTime(seconds: seconds - 0.1, preferredTimescale: 600)
+                        : .zero
+                    if let frame = try? await generator.image(at: time).image {
+                        return CIImage(cgImage: frame)
+                    }
                 }
-                let asset = AVURLAsset(url: url)
-                let generator = AVAssetImageGenerator(asset: asset)
-                generator.appliesPreferredTrackTransform = true
-                generator.maximumSize = CGSize(width: 2048, height: 2048)
-                // Aerial desktops settle on the final frame after their opening animation.
-                let seconds =
-                    (try? await asset.load(.duration)).map(CMTimeGetSeconds)
-                    ?? .nan
-                let time =
-                    seconds.isFinite && seconds > 1
-                    ? CMTime(seconds: seconds - 0.1, preferredTimescale: 600)
-                    : .zero
-                if let frame = try? await generator.image(at: time).image {
-                    return CIImage(cgImage: frame)
+                let thumbnail = root.appendingPathComponent(
+                    "aerials/thumbnails/\(id).png"
+                )
+                if let image = CIImage(contentsOf: thumbnail) {
+                    return image
                 }
             }
             logger.error("The selected aerial wallpaper could not be loaded from local assets.")
+            return nil
+        }
+        if case .other(let provider) = choice, provider != "default" {
+            logger.error("The desktop wallpaper provider is not supported: \(provider, privacy: .public)")
             return nil
         }
         guard let url = request.url, url.isFileURL,
@@ -193,22 +228,5 @@ private actor WallpaperRenderer {
             return nil
         }
         return image
-    }
-
-    private static func desktopChoice(in index: [String: Any]) -> [String: Any]? {
-        for key in ["AllSpacesAndDisplays", "SystemDefault"] {
-            guard let scope = index[key] as? [String: Any] else { continue }
-            if scope["Type"] as? String == "idle" { continue }
-            let side = (scope["Type"] as? String) == "linked"
-                ? scope["Linked"]
-                : scope["Desktop"] ?? scope["Linked"]
-            guard let entry = side as? [String: Any],
-                let content = entry["Content"] as? [String: Any],
-                let choices = content["Choices"] as? [[String: Any]],
-                let choice = choices.first
-            else { continue }
-            return choice
-        }
-        return nil
     }
 }

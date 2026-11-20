@@ -34,6 +34,12 @@ Requires macOS 26+, Swift 6.2+, and the macOS 26+ SDK.
 
 Open `Xcode-project/OpenLaunchpad.xcodeproj` in Xcode 26 or later and run the **OpenLaunchpad** scheme.
 
+The standalone wallpaper-store checks can be run on macOS with:
+
+```sh
+xcrun swiftc Xcode-project/OpenLaunchpad/WallpaperStore.swift Xcode-project/Tests/WallpaperStoreChecks.swift -o WallpaperStoreChecks && ./WallpaperStoreChecks
+```
+
 ### Configure updates
 
 Sparkle is included through Swift Package Manager. Publish signed update archives and an appcast, and use increasing `CFBundleVersion` values. Distribution also requires appropriate Developer ID signing and notarization. Keep the Ed25519 private key secure and never commit it. See [Sparkle's publishing guide](https://sparkle-project.org/documentation/publishing/).
@@ -59,6 +65,7 @@ Sparkle is included through Swift Package Manager. Publish signed update archive
 - Classic LaunchOS-style search/grid/folder interface and five-tab settings, plus an optional Workspace interface.
 - Native Liquid Glass controls, current desktop wallpaper or a glass background, blur/material controls, automatic system light/dark appearance, explicit light/dark overrides, monochrome/tinted icon treatments, and separate app/folder labels.
 - Cached wallpaper blur and local aerial wallpaper stills keep expensive image processing outside scrolling animations. Wallpaper is refreshed when the launcher opens; animated wallpaper playback is not included.
+- Wallpaper lookup uses the launcher display and macOS's wallpaper store. For separate Spaces, it uses the most recently used stored selection; macOS does not expose the active Space through the public wallpaper API. Some system-generated or shuffled wallpapers cannot be resolved as local images and fall back to the app background.
 - Default macOS Apps logo when available, including native light/dark/tint icon variants through the system asset catalog; generated fallback on other hosts and an optional original rocket logo. Apple icon resources are read from the build machine and are not committed to this repository or covered by the project's MIT license. Dock icon appearance follows macOS icon settings, separately from app-only UI overrides.
 - JSON layout export/restore and read-only legacy Launchpad SQLite import; atomic local persistence with recovery copy on corrupted input.
 - App rescanning every 30 seconds, on volume changes and wake; unchanged scans preserve layout and icon caches, with background icon prefetch; disconnected custom-source layouts retained.
