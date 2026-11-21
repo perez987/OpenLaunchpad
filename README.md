@@ -26,7 +26,7 @@ I really like the original project and the OpenlaunchPad app, which works very w
 - Updates: the manual checks against a configured HTTPS JSON release manifest have been replaced by Sparkle, resolved through Xcode's Swift Package Manager, that uses the fork's `appcast.xml` and Ed25519 public key. Update checks are integrated into the app.
 - Localization: the interface and alerts are now localized, adding a simple language system with English (default) and Spanish.
 - Validation: the source repo has `make test` that runs the standalone `CoreChecks` executable and the application's integration self-test. The fork has no test functionality.
-- Interface: displaying the macOS wallpaper as the background—instead of the app's default background—doesn't work on my system → I’ve tried making some changes to fix this.
+- Interface: displaying the macOS wallpaper as the background—instead of the app's default background—doesn't work on my system → I’ve applied some changes to fix this.
 - Documentation: unused scripts and docs are deleted, while screenshots are now under the `Images/` folder.
 
 ## Build and run
